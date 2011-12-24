@@ -10,3 +10,5 @@ $config['menu'] = array (
 		array ( "Name" => "CON&#201CTATE","Link" => "contacto/conectate"),
 		array ( "Name" => "CONTACTO","Link" => "contacto")
   );
+$config['javascript_location'] = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
+$config['javascript_ajax_img'] = 'images/ajax-loader.gif';

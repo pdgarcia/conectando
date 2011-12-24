@@ -11,8 +11,19 @@ class Main extends CI_Controller {
 	{
 	  $this->load->model('noticias_model');
 	  $data['entries']= $this->noticias_model->Get(0,10);
-		$data['Titulo']='inicio';
+		$data['Titulo']='Inicio';
 		$data['main_content_view']='inicio_view';
+		
+		$this->load->library('javascript');
+    $this->jquery->plugin('js/jquery.spy.js',TRUE);
+    $js='$("ul#columna3").simpleSpy(2,5000,"' . base_url('noticias/data') . '")
+          .bind("mouseenter", function () {
+              $(this).trigger("stop");
+          }).bind("mouseleave", function () {
+              $(this).trigger("start");
+          });';
+    $this->javascript->output($js);
+    $this->javascript->compile();
 		$this->load->view('includes/template',$data);
 	}
 

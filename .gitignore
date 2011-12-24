@@ -1,2 +1,4 @@
 .DS_Store
 conectando.tmproj
+application/logs/log-*.php
+application/cache/*
