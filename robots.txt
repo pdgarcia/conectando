@@ -1,0 +1,6 @@
+User-agent: *
+disallow: /application/
+disallow: /ckeditor/
+disallow: /js/
+disallow: /system/
+disallow: /admin/
