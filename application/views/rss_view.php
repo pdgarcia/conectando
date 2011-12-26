@@ -8,7 +8,7 @@
 	$rssfeed .= '<description>Conectando Local es una empresa que aúna una gran experiencia y una visión global para ofrecerle las soluciones profesionales que su empresa necesita. intranets corporativas, tecnologías móviles, comercio electrónico, tecnología.</description>';
 	$rssfeed .= '<language>en-us</language>';
 	$rssfeed .= '<image><url>'.base_url('images/logo_03.gif').'</url><title>Noticias de la Conectando</title><link>'.base_url('noticias').'</link></image>';
-	$rssfeed .= '<copyright>Copyright (C) 2011 conectando.com</copyright>';
+	$rssfeed .= '<copyright>Copyright (C) 2011 conectandolocal.net</copyright>';
   foreach($entries as $e){
 	  $datetime = date("r", strtotime($e->n_pdate));
 	  $rssfeed .= '<item>';

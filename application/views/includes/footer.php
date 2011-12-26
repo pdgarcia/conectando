@@ -6,10 +6,10 @@
 				<div class="clear"></div>
 		  </div><!-- fin footer -->
     </div>
+    <?php
+    if(!empty($library_src)){echo $library_src;}
+    if(!empty($script_foot)){echo $script_foot;}  
+    ?>
     <!-- Page render in {elapsed_time} seconds-->
   </body>
-  <?php
-  if(!empty($library_src)){echo $library_src;}
-  if(!empty($script_foot)){echo $script_foot;}  
-  ?>
 </html>

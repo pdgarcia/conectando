@@ -17,6 +17,7 @@
 	echo '<title>'.trim($this->config->item('site_name').' | '.$Titulo).'</title>';
 	echo link_tag('css/conectando.css');
 	echo link_tag(base_url('favicon.ico'), 'shortcut icon', 'image/ico');
+	echo link_tag(base_url('favicon.ico'), 'icon', 'image/ico');
 	echo link_tag('noticias/feed', 'alternate', 'application/rss+xml', 'Conectando RSS Feed');
 ?>
   </head>

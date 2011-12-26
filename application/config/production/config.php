@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.conectando.com/';
+$config['base_url']	= 'http://www.conectandolocal.net/';
 
 /*
 |--------------------------------------------------------------------------

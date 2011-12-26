@@ -32,7 +32,5 @@
 			consec tetuer adipiscing elit
 			adipiscing elit Lorem ipsum dolor sit amet</span></p>
 			</div>
-		<ul id="columna3">
-<?php $this->load->view('data_view'); ?>
-		</ul>
+		<ul id="columna3"><?php $this->load->view('data_view'); ?></ul>
 	</div><!--fin contenido-->

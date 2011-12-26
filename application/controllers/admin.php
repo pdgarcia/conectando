@@ -2,7 +2,6 @@
 
 class Admin extends CI_Controller {
 	var $amenu;
-	var $fileupconfig;
 	
 	function __construct()
 	{
@@ -17,13 +16,6 @@ class Admin extends CI_Controller {
     $this->amenu.= anchor('admin/config','Configuración');
     $this->amenu.= anchor('login/logout','Cerrar sesión');
     $this->amenu.= '</div>';
-    
-    $this->fileupconfig['upload_path'] = './nimages/';
-		$this->fileupconfig['allowed_types'] = 'gif|jpg|jpeg|png';
-		$this->fileupconfig['max_size']	= '4096';
-		$this->fileupconfig['max_width']  = '5000';
-		$this->fileupconfig['max_height']  = '5000';
-		$this->fileupconfig['encrypt_name']  = TRUE;
 	}
 
 	public function index()
@@ -94,9 +86,43 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function _jsdata(){    
+    $this->load->library('javascript');
+    $this->jquery->plugin(base_url('ckeditor/ckeditor.js'),TRUE);
+    $this->jquery->plugin('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js',TRUE);
+    $js="CKEDITOR.replace( 'n_body',
+      {
+        language: 'es',
+        toolbar : 'Basic',
+        uiColor : '#003399'
+      });
+      $.datepicker.regional['es'] = {
+    		closeText: 'Cerrar',
+    		prevText: '&#x3c;Ant',
+    		nextText: 'Sig&#x3e;',
+    		currentText: 'Hoy',
+    		monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+    		monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    		dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
+    		dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
+    		dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
+    		weekHeader: 'Sm',
+    		dateFormat: 'dd/mm/yy',
+    		firstDay: 1,
+    		isRTL: false,
+    		showMonthAfterYear: false,
+    		yearSuffix: ''};
+    	$.datepicker.setDefaults($.datepicker.regional['es']);
+    	$.datepicker.setDefaults({showButtonPanel: true});
+    	$('#n_pdate').datepicker();";
+    $this->javascript->output($js);
+    $this->javascript->compile();  
+	}
+	
 	public function addnoticiaform(){
 	  $data['Titulo']='Agregar Noticia';
     $data['amenu']=$this->amenu;
+    $this->_jsdata();
 		$data['main_content_view']='admin_addnoticia_view';
 		$this->load->view('includes/template',$data);
 	}
@@ -126,11 +152,12 @@ class Admin extends CI_Controller {
 	  $flagarchivo=FALSE;
 	  $data['Titulo']='Agregar Noticia';
     $data['amenu']=$this->amenu;
+    $this->_jsdata();
 		$data['main_content_view']='admin_addnoticia_view';
 	  $this->load->model('noticias_model');
 	  $this->load->helper('array');
 
-		$this->load->library('upload', $this->fileupconfig);
+		$this->load->library('upload');
 
     $this->form_validation->set_rules('n_title','Titulo','trim|required');
 		$this->form_validation->set_rules('n_pdate','Fecha de Publicación','trim|required');
@@ -173,7 +200,6 @@ class Admin extends CI_Controller {
 	  if(!empty($n)){
 	    if(!empty($n->n_image)){
   	    $archivo=pathinfo($n->n_image);
-  	    //log_message('debug',json_encode(glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension'])));
   	    array_map( "unlink", glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension']));
   	  }
   	  $this->noticias_model->Delid($id);
@@ -196,6 +222,7 @@ class Admin extends CI_Controller {
 
 	public function edt_noticiaform($id){
 	  $this->load->model('noticias_model');
+    $this->_jsdata();
 	  $n=$this->noticias_model->Getid($id);
 	  if(!empty($n)){
 	    $data['Titulo']='Editar Noticia';
@@ -213,6 +240,7 @@ class Admin extends CI_Controller {
 	  $this->load->helper('array');
 	  $data['Titulo']='Editar Noticia';
     $data['amenu']=$this->amenu;
+    $this->_jsdata();
 	  $flagarchivo=FALSE;
 	  $n=$this->noticias_model->Getid($this->input->post('n_id'));
 	  
@@ -220,7 +248,7 @@ class Admin extends CI_Controller {
       $data['data']=$n;
   		$data['main_content_view']='admin_editnoticia_view';
 
-  		$this->load->library('upload', $this->fileupconfig);
+  		$this->load->library('upload');
 
       $this->form_validation->set_rules('n_title','Titulo','trim|required');
   		$this->form_validation->set_rules('n_pdate','Fecha de Publicación','trim|required');
@@ -245,7 +273,6 @@ class Admin extends CI_Controller {
         if($flagarchivo){
           if(!empty($n->n_image)){
       	    $archivo=pathinfo($n->n_image);
-      	    //log_message('debug',json_encode(glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension'])));
       	    array_map( "unlink", glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension']));
       	  }
           $filedata = $this->upload->data();

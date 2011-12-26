@@ -1,5 +1,7 @@
 <?php
   echo $amenu;
+  echo validation_errors();
+  if(isset($mensaje) && !empty($mensaje)){echo '<h3>'.$mensaje.'</h3>';}
   echo '<div id=formcontainer>';
   echo form_open_multipart('admin/add_noticia');
   echo form_label('Titulo:','n_title');
@@ -66,46 +68,9 @@
   echo form_submit('add','Agregar Noticia');
   echo form_reset('reset','Borrar');
   echo form_close();
-  echo validation_errors();
-  if(isset($mensaje) && !empty($mensaje)){echo '<h3>'.$mensaje.'</h3>';}
   echo '</div>';
   echo link_tag('css/jquery-ui-1.8.16.custom.css');
-?>
-  <script type="text/javascript" src="<?php echo  base_url('ckeditor/ckeditor.js') ?>"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
-    $(function() {
-      CKEDITOR.replace( 'n_body',
-      {
-        language: 'es',
-        toolbar : 'Basic',
-        uiColor : '#003399'
-      });
-      $.datepicker.regional['es'] = {
-    		closeText: 'Cerrar',
-    		prevText: '&#x3c;Ant',
-    		nextText: 'Sig&#x3e;',
-    		currentText: 'Hoy',
-    		monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
-    		'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-    		monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
-    		'Jul','Ago','Sep','Oct','Nov','Dic'],
-    		dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
-    		dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
-    		dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
-    		weekHeader: 'Sm',
-    		dateFormat: 'dd/mm/yy',
-    		firstDay: 1,
-    		isRTL: false,
-    		showMonthAfterYear: false,
-    		yearSuffix: ''};
-    	$.datepicker.setDefaults($.datepicker.regional['es']);
-    	$.datepicker.setDefaults({showButtonPanel: true});
-    	
-      $('#n_pdate').datepicker();
-    });
-  </script>
+
 
 
 

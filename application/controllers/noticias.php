@@ -31,7 +31,7 @@ class Noticias extends CI_Controller {
 	  
 	  $noticia=$this->noticias_model->Getid($not);
 	  if(empty($noticia)) { redirect('noticias');}
-		$data['Titulo']='Documentos' . $noticia->n_title;
+		$data['Titulo']='Documentos-' . $noticia->n_title;
 		$data['noticia']= $noticia;
     $data['main_content_view']='noticia_view';
 		$this->load->view('includes/template',$data);
