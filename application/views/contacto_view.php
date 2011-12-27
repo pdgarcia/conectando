@@ -25,7 +25,7 @@
       </p><br />
     </div>
     <h5>Formulario de contacto</h5>
-    <?php echo form_open('contacto/send'); ?>
+    <?php echo form_open('contacto/send',array('id' => 'contacto')); ?>
       <table width="97%">
         <tr>
           <td width="145" align="left" valign="top" class="body" id="company">
@@ -83,8 +83,7 @@
         </tr>
       </table>
     <?php echo form_close(); ?>
-    <?php echo validation_errors(); ?>
-    <?php if(isset($mensaje)){echo "<div id='enviado '>".$mensaje."</div>";} ?>
+    <div id="mensaje_inf"><?php if(isset($mensaje)){echo $mensaje;} ?></div>
     <p>
       Todos los datos facilitados a través del formulario o correo electrónico, serán tratados con estricta confidencialidad de acuerdo a Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos. Si usted desea rectificar o cancelar sus datos de nuestro fichero, puede notificarlo enviando una solicitud a través de nuestro correo electrónico info@formajobs.com
     </p><br /><br /><br /><br /><br /><br /><br />

@@ -343,7 +343,7 @@ label {
 
 .error {
 	color: red;
-	font-size: .7em;
+	font-size: .8em;
 }
 
 .bigimage {
@@ -557,5 +557,10 @@ ul#columna3 li p {
 
 #pagination strong,#pagination a:hover {
 	font-weight: normal;
+	background: #cac9c9;
+}
+
+#mensaje_inf{
+	clear: both;
 	background: #cac9c9;
 }
