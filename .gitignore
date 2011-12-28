@@ -3,3 +3,4 @@ conectando.tmproj
 application/logs/log-*.php
 application/cache/*
 nimages/*.jpg
+nimages/*
