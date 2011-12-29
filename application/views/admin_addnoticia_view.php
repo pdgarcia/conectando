@@ -30,7 +30,7 @@
     'value'       => 'active',
     'checked'     => set_checkbox('n_active', 'active',TRUE),
   )).br();
-  echo form_label('Texto:','n_body').br();
+  //echo form_label('Texto:','n_body').br();
   echo form_textarea(array(
     'name'        => 'n_body',
     'id'          => 'n_body',

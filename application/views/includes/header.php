@@ -32,10 +32,8 @@
 				<ul class="menu1">
 				<?php
 					foreach($this->config->item('menu') as $item){		
-						if(strcmp(uri_string(), $item['Link'])==0)
-							echo('<li class="current">');
-						else
-							echo('<li>');
+						if(strcmp(uri_string(), $item['Link'])==0) echo('<li class="current">');
+						else echo('<li>');
 						echo(anchor($item['Link'],'<b>'.$item['Name'].'</b>').'</li>');
 					}?>
 				</ul>

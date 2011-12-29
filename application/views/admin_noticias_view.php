@@ -17,7 +17,7 @@
         'title' => $e->n_imagetxt,
       );
       $datetime = date("- d/m/Y -", strtotime($e->n_pdate));
-      echo "<li class=noticia>";
+      if($e->n_active == 1){echo '<li class=noticia>';}else{echo '<li class="noticia nalt">';}
       echo anchor('admin/del_noticia/'.$e->n_id,'X',array('class' => 'deletelink','title' => 'Borrar'));
       echo anchor('admin/act_noticia/'.$e->n_id,'A',array('class' => 'activatelink','title' => 'Activar'));
       echo anchor('admin/edt_noticiaform/'.$e->n_id,'E',array('class' => 'editlink','title' => 'Editar')).br();

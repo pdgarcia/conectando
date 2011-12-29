@@ -6,9 +6,9 @@ class Noticias_model extends CI_Model {
     parent::__construct();
   }
 
-	function GetAll($all=TRUE){
+	function GetAll($filter=TRUE){
 		$this->db->order_by("n_pdate", "desc");
-		if($all){
+		if($filter){
 		  $this->db->where('DATE(`n_pdate`) <= DATE( NOW( ) )');
 		  $this->db->where('n_active = 1');
 		}
@@ -24,17 +24,19 @@ class Noticias_model extends CI_Model {
 		}
 	}
 
-	function Get($from,$num,$all=TRUE){
-		$this->count=$this->db->count_all('t_noticias');
-		$this->db->offset($from);
-		$this->db->limit($num);
-		if($all){
+	function Get($from,$num,$filter=TRUE){
+		$this->db->start_cache();
+		if($filter){
 		  $this->db->where('DATE(`n_pdate`) <= DATE( NOW( ) )');
 		  $this->db->where('n_active = 1');
 		}
+		$this->db->stop_cache();
+		$this->count=$this->db->count_all_results('t_noticias');
+		$this->db->offset($from);
+		$this->db->limit($num);
 		$this->db->order_by("n_pdate", "desc");
 		$q=$this->db->get('t_noticias');
-    //$this->count=$q->num_rows();
+		//$this->count=$q->num_rows();
 		if($this->count>0){
 			foreach($q->result() as $row){
 				$data[]=$row;

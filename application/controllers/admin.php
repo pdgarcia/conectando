@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 		$this->load->library('session');
 		if(!$this->session->userdata('logged_in')){redirect(base_url('login'));}
 		$this->load->library('form_validation');
+		$this->output->enable_profiler(TRUE);
 	}
 
 	public function index() {
@@ -36,8 +37,8 @@ class Admin extends CI_Controller {
 				buttons: {
 				  Confirmar: function() {
 					$( this ).dialog( "close" );
-					//window.location.href = theHREF;
-					alert(theHREF);
+					window.location.href = theHREF;
+					//alert(theHREF);
 				  },Cancelar: function() {
 					$( this ).dialog( "close" );
 				  }
@@ -198,7 +199,8 @@ class Admin extends CI_Controller {
 			$this->noticias_model->Add($postdata);
 			$data['mensaje']= 'Noticia agregada';
 		}
-		$this->load->view('includes/template',$data);
+		// $this->load->view('includes/template',$data);
+		redirect(base_url('admin'));
 	}
 
 	public function del_noticia($id){

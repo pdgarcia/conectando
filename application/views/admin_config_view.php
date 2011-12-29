@@ -23,35 +23,36 @@
   echo form_close();
   echo form_open('admin/chpass');
   echo form_fieldset('Password');
-  echo form_label('Password Actual: ','password');
+  echo '<table><tr><td>';
+  echo form_label('Password Actual: ','password').'</td><td>';
   echo form_password(array(
     'name'        => 'password',
     'id'          => 'password',
-    'maxlength'   => '255',
+    'maxlength'   => '32',
     'size'        => '50',
   ));
-  echo form_error('password').br();
-  echo form_label('Nueva Password: ','npassword');
+  echo form_error('password').'</td></tr><tr><td>';
+  echo form_label('Nueva Password: ','npassword').'</td><td>';
   echo form_password(array(
     'name'        => 'npassword',
     'id'          => 'npassword',
-    'maxlength'   => '255',
+    'maxlength'   => '32',
     'size'        => '50',
   ));
-  echo form_error('npassword').br();
-  echo form_label('Repetir Nueva Password: ','rnpassword');
+  echo form_error('npassword').'</td></tr><tr><td>';
+  echo form_label('Repetir Nueva Password: ','rnpassword').'</td><td>';
   echo form_password(array(
     'name'        => 'rnpassword',
     'id'          => 'rnpassword',
-    'maxlength'   => '255',
+    'maxlength'   => '32',
     'size'        => '50',
   ));
-  echo form_error('rnpassword').br();
+  echo form_error('rnpassword').'</td></tr><tr><td>';
   echo form_submit(array(
     'name'        => 'cambiar',
     'value'       => 'Cambiar',
     'class'       => 'button',
-  ));
+  )).'</td></tr><tr><td></td></tr></table>';
   echo form_fieldset_close();
   echo form_close();
   if(isset($mensaje) && !empty($mensaje)){echo '<h3>'.$mensaje.'</h3>';}

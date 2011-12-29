@@ -19,9 +19,17 @@
               'size'        => '50',
             );
   echo form_password($data);
-  echo form_error('password', '<label class="error">', '</label>'). br();
-  echo form_submit('login','Login');
-  echo form_reset('reset','Borrar');
+  echo form_error('password', '<label class="error">', '</label>'). br(2);
+  echo form_submit(array(
+    'name'        => 'login',
+    'value'       => 'Login',
+    'class'       => 'button',
+  ));
+  echo form_reset(array(
+    'name'        => 'reset',
+    'value'       => 'Borrar',
+    'class'       => 'button',
+  ));
   echo form_fieldset_close();
   echo form_close();
   if(isset($mensaje)){echo "<p class=error>".$mensaje."</p>";}
