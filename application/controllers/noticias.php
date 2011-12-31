@@ -4,7 +4,7 @@ class Noticias extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('noticias_model');
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 	}
 
 	public function index() {

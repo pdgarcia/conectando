@@ -1,5 +1,5 @@
 <div class="clear"></div>
-<div id="barrita_azul"></div>
+<div id="barrita_azul"><?= anchor(base_url("noticias/feed"),'<img src='.base_url("images/news-header-rss-icon.png").' width="18" height="18" alt="News Header Rss Icon">')?></div>
 <?php
   echo $pagination_links;
 	echo "<div id=noticiaslist><ul>";
