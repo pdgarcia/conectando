@@ -38,36 +38,36 @@
     'rows'        => '20',
     'cols'        => '60',
   )).br();
-  echo form_fieldset('Imagen');
-  echo form_label('Imagen: ','userfile');
-  echo form_upload('userfile').br();
-  echo form_label('Descripción imagen: ','n_imagetxt');
-  echo form_input(array(
+  echo form_fieldset('Imagen').'<table>';
+  echo '<tr><td>'.form_label('Imagen: ','userfile').'</td>';
+  echo '<td>'.form_upload('userfile').'</td></tr>';
+  echo '<tr><td>'.form_label('Descripción: ','n_imagetxt').'</td>';
+  echo '<td>'.form_input(array(
     'name'        => 'n_imagetxt',
     'id'          => 'n_imagetxt',
     'value'       => set_value('n_imagetxt'),
     'maxlength'   => '255',
     'size'        => '50',
-  )).br();
-  echo form_fieldset_close();
-  echo form_fieldset('Fuente de la Noticia');
-  echo form_label('Link a la fuente: ','n_link');
-  echo form_input(array(
+  )).'</td></tr>';
+  echo '</table>'.form_fieldset_close();
+  echo form_fieldset('Fuente de la Noticia').'<table>';
+  echo '<tr><td>'.form_label('Link a la Fuente: ','n_link').'</td>';
+  echo '<td>'.form_input(array(
     'name'        => 'n_link',
     'id'          => 'n_link',
     'value'       => set_value('n_link'),
     'maxlength'   => '255',
     'size'        => '50',
-  )).br();
-  echo form_label('Descripción Fuente: ','n_linktxt');
-  echo form_input(array(
+  )).'</td></tr>';
+  echo '<tr><td>'.form_label('Descripción: ','n_linktxt').'</td>';
+  echo '<td>'.form_input(array(
     'name'        => 'n_linktxt',
     'id'          => 'n_linktxt',
     'value'       => set_value('n_linktxt'),
     'maxlength'   => '255',
     'size'        => '50',
-  )).br();
-  echo form_fieldset_close();
+  )).'</td></tr>';
+  echo '</table>'.form_fieldset_close();
   echo form_submit(array(
     'name'        => 'add',
     'value'       => 'Agregar Noticia',

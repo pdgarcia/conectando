@@ -7,7 +7,7 @@ class Admin extends CI_Controller {
 		$this->load->library('session');
 		if(!$this->session->userdata('logged_in')){redirect(base_url('login'));}
 		$this->load->library('form_validation');
-		$this->output->enable_profiler(TRUE);
+		// $this->output->enable_profiler(TRUE);
 	}
 
 	public function index() {
@@ -43,7 +43,7 @@ class Admin extends CI_Controller {
             }
           }
         });
-			});';
+		});';
 		$this->javascript->output($js);
 		$this->javascript->compile();
 		$this->load->view('includes/template',$data);
@@ -191,7 +191,7 @@ class Admin extends CI_Controller {
 				$filedata = $this->upload->data();
 				$this->_chgimages($filedata);
 				$postdata['n_image']=$filedata['file_name'];
-			}
+			}else{$postdata['n_image']='';}
 			list($day,$month,$year)=explode("/",$postdata['n_pdate']);
 			$postdata['n_pdate'] = $year."-".$month."-".$day;
 			if($postdata['n_active'] == 'active'){$postdata['n_active'] = 1;}else{$postdata['n_active'] = 0;}

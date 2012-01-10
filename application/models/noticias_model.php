@@ -7,11 +7,11 @@ class Noticias_model extends CI_Model {
   }
 
 	function GetAll($filter=TRUE){
-		$this->db->order_by("n_pdate", "desc");
 		if($filter){
-		  $this->db->where('DATE(`n_pdate`) <= DATE( NOW( ) )');
-		  $this->db->where('n_active = 1');
+			$this->db->where('DATE(`n_pdate`) <= DATE( NOW( ) )');
+			$this->db->where('n_active = 1');
 		}
+		$this->db->order_by("n_pdate", "desc");
 		$q=$this->db->get('t_noticias');
 		
 		$this->count=$q->num_rows();
@@ -25,18 +25,17 @@ class Noticias_model extends CI_Model {
 	}
 
 	function Get($from,$num,$filter=TRUE){
-		$this->db->start_cache();
 		if($filter){
-		  $this->db->where('DATE(`n_pdate`) <= DATE( NOW( ) )');
-		  $this->db->where('n_active = 1');
+			$this->db->start_cache();
+		  	$this->db->where('DATE(`n_pdate`) <= DATE( NOW( ) )');
+		  	$this->db->where('n_active = 1');
+		  	$this->db->stop_cache();
 		}
-		$this->db->stop_cache();
 		$this->count=$this->db->count_all_results('t_noticias');
 		$this->db->offset($from);
 		$this->db->limit($num);
 		$this->db->order_by("n_pdate", "desc");
 		$q=$this->db->get('t_noticias');
-		//$this->count=$q->num_rows();
 		if($this->count>0){
 			foreach($q->result() as $row){
 				$data[]=$row;

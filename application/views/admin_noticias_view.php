@@ -12,8 +12,6 @@
         'src' => 'nimages/'.$thumbname,
         'alt' => $e->n_imagetxt,
         'class' => 'n_image',
-        //'width' => '150',
-        //'height' => '150',
         'title' => $e->n_imagetxt,
       );
       $datetime = date("- d/m/Y -", strtotime($e->n_pdate));
