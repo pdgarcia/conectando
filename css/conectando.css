@@ -48,7 +48,7 @@ body {
 }
 
 .menu1 {
-	padding: 0 0 0 20px;
+	padding: 0 0 0 5px;
 	margin: 0;
 	list-style: none;
 	height: 28px;
@@ -350,7 +350,7 @@ label {
 	float: left;
 	display: block;
 	text-align: center;
-	vertical-align: middle; 
+	vertical-align: middle;
 	/* width:   300px;
 	height:   300px;
 	border: 0px solid black;*/
@@ -378,7 +378,7 @@ label {
 
 .medimage {
 	float: left;
-	text-align: center; 
+	text-align: center;
 	/*width:   150px;
 	height:   150px;
 	border: 1px solid black;*/

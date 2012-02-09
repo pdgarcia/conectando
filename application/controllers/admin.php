@@ -4,7 +4,7 @@ class Admin extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->library('session');
+    $this->load->library('session');
 		if(!$this->session->userdata('logged_in')){redirect(base_url('login'));}
 		$this->load->library('form_validation');
 		// $this->output->enable_profiler(TRUE);
@@ -63,7 +63,7 @@ class Admin extends CI_Controller {
 		$data['main_content_view']='admin_config_view';
 		$data['orgu_email']=$this->user_model->get_email();
 		$this->form_validation->set_rules('u_email','Correo','trim|required|valid_email');
-	  
+
 		if ($this->form_validation->run() == FALSE){
 			$this->load->view('includes/template',$data);
 		}else{
@@ -73,13 +73,13 @@ class Admin extends CI_Controller {
 			$this->load->view('includes/template',$data);
 		}
 	}
-	
+
 	public function chpass(){
 		$this->load->model('user_model');
 		$data['Titulo']='Pagina de configuración';
 		$data['main_content_view']='config_view';
 		$data['orgu_email']=$this->user_model->get_email();
-		
+
 		$this->form_validation->set_rules('password','Password Actual','trim|required|md5');
 		$this->form_validation->set_rules('npassword','Nueva Password','trim|required|md5');
 		$this->form_validation->set_rules('rnpassword','Repetir Password','trim|required|matches[npassword]|md5');
@@ -95,8 +95,8 @@ class Admin extends CI_Controller {
 			$this->load->view('includes/template',$data);
 		}
 	}
-	
-	public function _jsdata(){    
+
+	public function _jsdata(){
 		$this->load->library('javascript');
 		$this->jquery->plugin(base_url('ckeditor/ckeditor.js'),TRUE);
 		$this->jquery->plugin('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js',TRUE);
@@ -128,14 +128,14 @@ class Admin extends CI_Controller {
 		$this->javascript->output($js);
 		$this->javascript->compile();
 	}
-	
+
 	public function addnoticiaform(){
 		$data['Titulo']='Agregar Noticia';
 		$this->_jsdata();
 		$data['main_content_view']='admin_addnoticia_view';
 		$this->load->view('includes/template',$data);
 	}
-	
+
 	public function _chgimages($filedata){
 		$config['image_library'] = 'gd2';
 		$config['source_image']	=  $filedata['full_path'];
@@ -156,7 +156,7 @@ class Admin extends CI_Controller {
 		$this->image_lib->initialize($config);
 		$this->image_lib->resize();
 	}
-	
+
 	public function add_noticia(){
 		$flagarchivo=FALSE;
 		$data['Titulo']='Agregar Noticia';
@@ -223,7 +223,7 @@ class Admin extends CI_Controller {
         $this->noticias_model->chg_act($id,0);
       }else{
         $this->noticias_model->chg_act($id,1);
-      } 
+      }
     }
     redirect(base_url('admin'));
   }
