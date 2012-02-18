@@ -1,7 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-
 	function __construct() {
 		parent::__construct();
     $this->load->library('session');
@@ -74,7 +73,7 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function chpass(){
+	public function chpass() {
 		$this->load->model('user_model');
 		$data['Titulo']='Pagina de configuración';
 		$data['main_content_view']='config_view';
@@ -96,7 +95,7 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function _jsdata(){
+	public function _jsdata() {
 		$this->load->library('javascript');
 		$this->jquery->plugin(base_url('ckeditor/ckeditor.js'),TRUE);
 		$this->jquery->plugin('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js',TRUE);
@@ -129,14 +128,14 @@ class Admin extends CI_Controller {
 		$this->javascript->compile();
 	}
 
-	public function addnoticiaform(){
+	public function addnoticiaform() {
 		$data['Titulo']='Agregar Noticia';
 		$this->_jsdata();
 		$data['main_content_view']='admin_addnoticia_view';
 		$this->load->view('includes/template',$data);
 	}
 
-	public function _chgimages($filedata){
+	public function _chgimages($filedata) {
 		$config['image_library'] = 'gd2';
 		$config['source_image']	=  $filedata['full_path'];
 		$config['maintain_ratio'] = TRUE;
@@ -157,7 +156,7 @@ class Admin extends CI_Controller {
 		$this->image_lib->resize();
 	}
 
-	public function add_noticia(){
+	public function add_noticia() {
 		$flagarchivo=FALSE;
 		$data['Titulo']='Agregar Noticia';
 		$this->_jsdata();
@@ -202,7 +201,7 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin'));
 	}
 
-	public function del_noticia($id){
+	public function del_noticia($id) {
 		$this->load->model('noticias_model');
 		$n=$this->noticias_model->Getid($id);
 		if(!empty($n)){
@@ -215,7 +214,7 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin'));
 	}
 
-  public function act_noticia($id){
+  public function act_noticia($id) {
     $this->load->model('noticias_model');
     $n=$this->noticias_model->Getid($id);
     if(!empty($n)){
@@ -228,7 +227,7 @@ class Admin extends CI_Controller {
     redirect(base_url('admin'));
   }
 
-  public function edt_noticiaform($id){
+  public function edt_noticiaform($id) {
     $this->load->model('noticias_model');
     $this->_jsdata();
     $n=$this->noticias_model->Getid($id);

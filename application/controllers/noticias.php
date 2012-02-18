@@ -23,7 +23,7 @@ class Noticias extends CI_Controller {
     $this->load->view('includes/template',$data);
   }
 
-  public function noticia_by_id($not){
+  public function noticia_by_id($not) {
     //$this->output->cache(20);
     if(!(int)$not) { redirect('noticias');}
     $this->load->model('noticias_model');
@@ -35,13 +35,13 @@ class Noticias extends CI_Controller {
     $this->load->view('includes/template',$data);
   }
 
-  public function feed(){
+  public function feed() {
     $this->output->cache(10);
     $data['entries']= $this->noticias_model->Get(0,10);
     $this->load->view('rss_view',$data);
   }
 
-  public function data(){
+  public function data() {
     $this->output->cache(10);
     $data['entries']= $this->noticias_model->Get(0,10);
     $this->load->view('data_view',$data);

@@ -2,9 +2,9 @@
 class Noticias_model extends CI_Model {
 	var $count;
 
-  function __construct(){
-    parent::__construct();
-  }
+	function __construct(){
+		parent::__construct();
+	}
 
 	function GetAll($filter=TRUE){
 		if($filter){

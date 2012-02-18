@@ -7,7 +7,6 @@
 			</div>
 			<div id="texto_servicios">
 			<h5>INSTALACIÓN Y MANTENIMIENTO DE EQUIPOS INFORMÁTICOS Y REDES</h5>
-				<p>Le asistimos en la configuración de su red local y su acceso a Internet para que sea seguro. 
 					No nos dedicamos a la simple distribución de equipos, sino que analizamos correctamente sus 
 					necesidades informáticas y realizamos un plan de compras con la vista puesta en el futuro: actualización, escalabilidad, rendimiento.</p> 
 				<p>Distribuimos primeras marcas y equipos clónicos de la mejor calidad, siempre contando con nuestro asesoramiento, 

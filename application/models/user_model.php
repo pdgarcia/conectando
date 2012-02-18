@@ -1,10 +1,10 @@
 <?php
 class User_model extends CI_Model {
-  var $islogged = FALSE;
-	
-  function __construct(){
-    parent::__construct();
-  }
+	var $islogged = FALSE;
+
+	function __construct(){
+		parent::__construct();
+	}
 
 	function checkuser($usr,$pass){
 		$this->db->where('u_username',$usr);

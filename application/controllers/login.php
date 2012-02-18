@@ -1,14 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Login extends CI_Controller {
-	function __construct()
-	{
+	function __construct() {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('session');
 	}
-  public function index()
-	{
+
+	public function index() {
 		$data['Titulo']='Login Page';
 		$data['main_content_view']='login_view';
 		$this->load->view('includes/template',$data);
@@ -19,8 +18,7 @@ class Login extends CI_Controller {
 		redirect(base_url('admin'));
 	}
 	
-	public function processlogin()
-	{
+	public function processlogin() {
 		$this->load->model('user_model');
 		$data['Titulo']='Login Page';
 		$data['main_content_view']='login_view';
