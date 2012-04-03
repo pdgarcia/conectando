@@ -1,5 +1,4 @@
 <div id="barrita"></div>
-
 <div id="col1"><img src="<?php echo base_url('images/f_nos.jpg'); ?>" width="200" height="450" alt="F Nos"></div>
 <div id="col2">
 	<p><span class="negrita">Conectando Local</span> es una empresa que aúna una gran
