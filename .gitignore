@@ -1,6 +1,10 @@
 .DS_Store
-conectando.tmproj
-application/logs/log-*.php
 application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+conectando.tmproj
 nimages/*.jpg
 nimages/*
