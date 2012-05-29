@@ -26,7 +26,15 @@
   echo "<span class='highlight'>Publicado el: ".$datetime."</span>".br();
   echo '<div id=sociallinks  style="float:left; height: 30px; width: 100%;">'. $facebookcode.$twitercode.$googlepluscode.'</div>';
   echo '<div class=clear></div>';
-  if($noticia->n_link  != ""){echo "Fuente: ".anchor($noticia->n_link, $noticia->n_linktxt, "title='$noticia->n_linktxt'").br();}
-  if($noticia->n_image != ""){echo '<div class=bigimage><span></span>'.img($image_properties) .'<p>'.$noticia->n_imagetxt.'</p></div>';}
+  if($noticia->n_link  != ""){
+    if($noticia->n_linktxt == ""){$noticia->n_linktxt = $noticia->n_link;}
+    #echo '-'.$noticia->n_linktxt.'*';
+    echo "Fuente: " . anchor($noticia->n_link, $noticia->n_linktxt, "title='$noticia->n_linktxt'").br();
+  }
+  if($noticia->n_image != ""){
+    echo '<div class=bigimage><span></span>' . img($image_properties);
+    if($noticia->n_imagetxt != "") { echo '<p>' . $noticia->n_imagetxt . '</p>'; }
+    echo '</div>';
+  }
   echo '<div class=textbody>'. auto_typography($noticia->n_body)."</div><br/></div>".br(2);
   echo '<div class=clear></div>';

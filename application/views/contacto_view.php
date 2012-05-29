@@ -1,21 +1,20 @@
 <div id="barrita"></div>
 <div id="contenido">
   <div id="col1">
-    <a href="http://maps.google.es/maps/place?q=Calle+Puerto+San+Glorio+4&amp;hl=es&amp;ftid=0xd422769e1b890ad:0x130340f39ef42b70" target="_blank">
+    <a href="http://maps.google.com/maps?q=Calle+del+Inspector+Juan+Antonio+Bueno,+2,+Alcorc%C3%B3n,+Spain&hl=en&ie=UTF8&ll=40.345121,-3.806752&spn=0.007793,0.016512&sll=40.304976,-3.732677&sspn=0.249516,0.528374&oq=Inspector+Juan+Antonio+Bueno,+2+&t=m&hnear=Calle+del+Inspector+Juan+Antonio+Bueno,+2,+28924+Alcorc%C3%B3n,+Madrid,+Comunidad+de+Madrid,+Spain&z=17" target="_blank">
       <img src="<?php echo base_url('images/local.jpg'); ?>" width="300" height="118" alt="Local"><img src="<?php echo base_url('images/mapa.png'); ?>" width="296" height="216" alt="Mapa"></a>
       <br /><br /><br /><br /><br /><br />
     <h6>Información de contacto:</h6>
     <p>
-      <span class="blanco">Polígono Industrial Prado Overa<br />
-      Calle Puerto San Glorio 4<br />
-      28919 Leganés (Madrid)<br />
+      <span class="blanco"> Inspector Juan Antonio Bueno, 2<br />
+      28924 Alcorcón - Madrid<br />
       ESPAÑA<br /></span>
     </p><br /><br />
     <p>
-      <span class="blanco"><span><img src="<?php echo base_url('images/ico-phone.png'); ?>" alt="Phone" width="20" height="16" hspace="2"> Teléfono:</span> 91 341 00 09<br />
-      <span><img src="<?php echo base_url('images/ico-fax.png'); ?>" alt="Fax" width="20" height="16" hspace="2"> Fax:</span> 91 341 00 74<br />
-      <span><img src="<?php echo base_url('images/ico-website.png'); ?>" alt="WWW Link" width="20" height="16" hspace="2"> Web:</span> <a href="http://www.rotulosgordillo.es">www.rotulosgordillo.es</a><br />
-      <span><img src="<?php echo base_url('images/ico-email.png'); ?>" alt="Email" width="20" height="16" hspace="2"> Email:</span> <a href="mailto:info@rotulosgordillo.es">info@rotulosgordillo.es</a><br /></span>
+      <span class="blanco"><span><img src="<?php echo base_url('images/ico-phone.png'); ?>" alt="Phone" width="20" height="16" hspace="2"> Teléfono:</span> 91 665 23 54<br />
+      <span><img src="<?php echo base_url('images/ico-fax.png'); ?>" alt="Fax" width="20" height="16" hspace="2"> Fax:</span> 91 684 01 79<br />
+      <span><img src="<?php echo base_url('images/ico-website.png'); ?>" alt="WWW Link" width="20" height="16" hspace="2"> Web:</span> <a href="http://www.formaeduca.com">wwwconectandolocal.net</a><br />
+      <span><img src="<?php echo base_url('images/ico-email.png'); ?>" alt="Email" width="20" height="16" hspace="2"> Email:</span> <a href="mailto:info@conectandolocal.net">info@conectandolocal.net</a><br /></span>
     </p>
   </div>
   <div id="col2">
