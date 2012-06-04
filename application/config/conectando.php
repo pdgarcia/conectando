@@ -5,7 +5,7 @@
       array ( "Name" => "EMPRESA","Link" => "empresa"),
       array ( "Name" => "SERVICIOS","Link" => "servicios"),
       array ( "Name" => "NOTICIAS","Link" => "noticias"),
-      array ( "Name" => "CON&#201CTATE","Link" => "contacto/conectate"),
+      array ( "Name" => "TRABAJA CON NOSOTROS","Link" => "contacto/trabaja"),
       array ( "Name" => "CONTACTO","Link" => "contacto")
       );
   $config['amenu'] = array (
