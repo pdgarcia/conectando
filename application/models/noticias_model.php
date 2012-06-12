@@ -12,6 +12,7 @@ class Noticias_model extends CI_Model {
 			$this->db->where('n_active = 1');
 		}
 		$this->db->order_by("n_pdate", "desc");
+		$this->db->order_by("n_id", "desc");
 		$q=$this->db->get('t_noticias');
 		
 		$this->count=$q->num_rows();
@@ -35,6 +36,7 @@ class Noticias_model extends CI_Model {
 		$this->db->offset($from);
 		$this->db->limit($num);
 		$this->db->order_by("n_pdate", "desc");
+		$this->db->order_by("n_id", "desc");
 		$q=$this->db->get('t_noticias');
 		if($this->count>0){
 			foreach($q->result() as $row){
