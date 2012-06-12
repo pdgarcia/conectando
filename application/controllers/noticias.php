@@ -42,7 +42,7 @@ class Noticias extends CI_Controller {
   }
 
   public function data() {
-    $this->output->cache(10);
+    //$this->output->cache(10);
     $data['entries']= $this->noticias_model->Get(0,10);
     $this->load->view('data_view',$data);
   }
