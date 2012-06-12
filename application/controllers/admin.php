@@ -206,8 +206,10 @@ class Admin extends CI_Controller {
 		$n=$this->noticias_model->Getid($id);
 		if(!empty($n)){
 			if(!empty($n->n_image)){
-				$archivo=pathinfo($n->n_image);
-				array_map( "unlink", glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension']));
+				//$archivo=pathinfo($n->n_image);
+				//array_map( "unlink", glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension']));
+				$archivo=preg_split('/\./', $n->n_image);
+				array_map( "unlink", glob('./nimages/'.$archivo[0].'*.'.$archivo[1]));
 			}
 			$this->noticias_model->Delid($id);
 		}
@@ -276,8 +278,10 @@ class Admin extends CI_Controller {
         $postdata=elements(array('n_active','n_title','n_body','n_image','n_imagetxt','n_link','n_linktxt','n_pdate'), $_POST);
         if($flagarchivo){
           if(!empty($n->n_image)){
-            $archivo=pathinfo($n->n_image);
-            array_map( "unlink", glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension']));
+            //$archivo=pathinfo($n->n_image);
+            //array_map( "unlink", glob('./nimages/'.$archivo['filename'].'*.'.$archivo['extension']));
+            $archivo=preg_split('/\./', $n->n_image);
+			array_map( "unlink", glob('./nimages/'.$archivo[0].'*.'.$archivo[1]));
           }
           $filedata = $this->upload->data();
           $this->_chgimages($filedata);
