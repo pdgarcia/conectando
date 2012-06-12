@@ -8,29 +8,29 @@ class Contacto extends CI_Controller {
   public function index() {
     $data['Titulo']='Pagina Contacto';
 
-    $this->load->library('javascript');
-    $js='$.ajaxSettings.cache = false;
-      $("#contacto").submit(function(){
-      $.ajax({
-              url: "'.base_url('contacto/sendc').'",
-              type: "POST",
-              dataType: "json",
-              data: $("#contacto").serialize(),
-              success: function(d) {
-                $("#mensaje_inf").html(d.mensaje);
-                if(d.st==1){$("form")[0].reset();}
-              },
-              beforeSend: function(){
-                $("#contacto").fadeTo("slow",0.2);
-              },
-              complete: function(){
-                $("#contacto").fadeTo("slow",1);
-              }
-        });
-        return false;
-      });';
-    $this->javascript->output($js);
-    $this->javascript->compile();
+    // $this->load->library('javascript');
+    // $js='$.ajaxSettings.cache = false;
+    //   $("#contacto").submit(function(){
+    //   $.ajax({
+    //           url: "'.base_url('contacto/sendc').'",
+    //           type: "POST",
+    //           dataType: "json",
+    //           data: $("#contacto").serialize(),
+    //           success: function(d) {
+    //             $("#mensaje_inf").html(d.mensaje);
+    //             if(d.st==1){$("form")[0].reset();}
+    //           },
+    //           beforeSend: function(){
+    //             $("#contacto").fadeTo("slow",0.2);
+    //           },
+    //           complete: function(){
+    //             $("#contacto").fadeTo("slow",1);
+    //           }
+    //     });
+    //     return false;
+    //   });';
+    // $this->javascript->output($js);
+    // $this->javascript->compile();
 
     $data['main_content_view']='contacto_view';
     $this->load->view('includes/template',$data);
@@ -38,29 +38,31 @@ class Contacto extends CI_Controller {
 
   public function trabaja() {
     $data['Titulo']='Trabaja con nosotros';
-    $this->load->library('javascript');
-    $js='$.ajaxSettings.cache = false;
-      $("#contacto").submit(function(){
-      $.ajax({
-              url: "'.base_url('contacto/sendt').'",
-              type: "POST",
-              dataType: "json",
-              data: $("#contacto").serialize(),
-              success: function(d) {
-                $("#mensaje_inf").html(d.mensaje);
-                if(d.st==1){$("form")[0].reset();}
-              },
-              beforeSend: function(){
-                $("#contacto").fadeTo("slow",0.2);
-              },
-              complete: function(){
-                $("#contacto").fadeTo("slow",1);
-              }
-        });
-        return false;
-      });';
-    $this->javascript->output($js);
-    $this->javascript->compile();
+
+    // $this->load->library('javascript');
+    // $js='$.ajaxSettings.cache = false;
+    //   $("#contacto").submit(function(){
+    //   $.ajax({
+    //           url: "'.base_url('contacto/sendt').'",
+    //           type: "POST",
+    //           dataType: "json",
+    //           data: $("#contacto").serialize(),
+    //           success: function(d) {
+    //             $("#mensaje_inf").html(d.mensaje);
+    //             if(d.st==1){$("form")[0].reset();}
+    //           },
+    //           beforeSend: function(){
+    //             $("#contacto").fadeTo("slow",0.2);
+    //           },
+    //           complete: function(){
+    //             $("#contacto").fadeTo("slow",1);
+    //           }
+    //     });
+    //     return false;
+    //   });';
+    // $this->javascript->output($js);
+    // $this->javascript->compile();
+
     $data['main_content_view']='trabajo_view';
     $this->load->view('includes/template',$data);
   }
