@@ -1,15 +1,14 @@
 <div id="barrita"></div>
 <div id="contenido">
-  <div id="col1">
-  </div>
+  <div id="col1"><img src="<?php echo base_url('images/f_nos.jpg'); ?>" width="200" height="450" alt="F Nos"></div>
   <div id="col2">
     <div>
       <p>
-        Si desea trabajar con nosotros únicamente tiene que rellenar este formulario y con la mayor brevedad posible contestaremos a su petición.
-      </p><br />
+        Si desea trabajar con nosotros únicamente tiene que rellenar este formulario y con la mayor brevedad nos pondremos en contacto.
+      </p>
     </div>
     <h5>Formulario de contacto</h5>
-    <?php echo form_open('contacto/send',array('id' => 'contacto')); ?>
+    <?php echo form_open('contacto/sendt',array('id' => 'contacto')); ?>
       <table width="97%">
         <tr>
           <td align="left" valign="top" class="body" id="name">
@@ -62,6 +61,6 @@
     <div id="mensaje_inf"><?php if(isset($mensaje)){echo $mensaje;} ?></div>
     <p>
       Todos los datos facilitados a través del formulario o correo electrónico, serán tratados con estricta confidencialidad de acuerdo a Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos. Si usted desea rectificar o cancelar sus datos de nuestro fichero, puede notificarlo enviando una solicitud a través de nuestro correo electrónico info@formajobs.com
-    </p><br /><br /><br /><br /><br /><br /><br />
+    </p>
   </div>
 </div>

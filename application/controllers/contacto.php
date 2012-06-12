@@ -9,7 +9,8 @@ class Contacto extends CI_Controller {
     $data['Titulo']='Pagina Contacto';
 
     $this->load->library('javascript');
-    $js='$("#contacto").submit(function(){
+    $js='$.ajaxSettings.cache = false;
+      $("#contacto").submit(function(){
       $.ajax({
               url: "'.base_url('contacto/sendc').'",
               type: "POST",
@@ -38,9 +39,10 @@ class Contacto extends CI_Controller {
   public function trabaja() {
     $data['Titulo']='Trabaja con nosotros';
     $this->load->library('javascript');
-    $js='$("#contacto").submit(function(){
+    $js='$.ajaxSettings.cache = false;
+      $("#contacto").submit(function(){
       $.ajax({
-              url: "'.base_url('contacto/sendc').'",
+              url: "'.base_url('contacto/sendt').'",
               type: "POST",
               dataType: "json",
               data: $("#contacto").serialize(),

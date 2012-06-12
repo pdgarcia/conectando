@@ -24,7 +24,7 @@
       </p><br />
     </div>
     <h5>Formulario de contacto</h5>
-    <?php echo form_open('contacto/send',array('id' => 'contacto')); ?>
+    <?php echo form_open('contacto/sendc',array('id' => 'contacto')); ?>
       <table width="97%">
         <tr>
           <td width="145" align="left" valign="top" class="body" id="company">
