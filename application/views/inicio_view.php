@@ -12,23 +12,17 @@
     <div id="foto">
       <img src="images/foto01.gif" width="186" height="63" alt="Foto01">
     </div>
-    <p><span class="titulo">LOREM IPSUM</span><br/>
+    <p><span class="titulo">RAPIDO</span><br/>
     <img src="images/arrow.gif" width="5" height="5" alt="Arrow">
-    <span class="blanco">Lorem ipsum dolor sit amet consectetuer 
-      adipiscing elit Lorem ipsum dolor sit amet 
-      consec tetuer adipiscing elit
-      adipiscing elit Lorem ipsum dolor sit amet</span></p>
+    <span class="blanco">Realizamos su diseño web planificando todos los pasos para su elaboración, registro de dominio, alojamiento web, diseño gráfico, alta y posicionamiento en buscadores y todo lo que necesite hasta conseguir las metas marcadas para su proyecto.</span></p>
   </div>
   <div id="columna2">
     <div id="foto">
       <img src="images/foto02.gif" width="186" height="63" alt="Foto02">
     </div>
-    <p><span class="titulo">LOREM IPSUM</span><br/>
+    <p><span class="titulo">SIMPLE</span><br/>
     <img src="images/arrow.gif" width="5" height="5" alt="Arrow">
-    <span class="blanco">Lorem ipsum dolor sit amet consectetuer 
-    adipiscing elit Lorem ipsum dolor sit amet 
-    consec tetuer adipiscing elit
-    adipiscing elit Lorem ipsum dolor sit amet</span></p>
+    <span class="blanco">Tenemos las herramientas para crear un sistema de venta Online seguro y efectivo que las empresas necesitan para poner en marcha su tienda en internet.</span></p>
   </div>
   <ul id="columna3"><?php $this->load->view('data_view'); ?></ul>
 </div><!--fin contenido-->
