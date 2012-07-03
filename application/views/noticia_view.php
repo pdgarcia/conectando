@@ -1,7 +1,14 @@
 <div class="clear"></div>
 <div id="barrita_azul"></div>
 <?php
-  $facebookcode ='<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><iframe src="//www.facebook.com/plugins/like.php?href&amp;send=false&amp;layout=button_count&amp;width=85px&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21px" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe></div>';
+  $facebookcode ='<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script><div class="fb-like" data-href="'.current_url().'" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>';
   $twitercode ='<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="'.current_url().'" data-text="'.$Titulo.'" data-lang="es">Twittear</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>';
   $googlepluscode = '<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><g:plusone size="medium"></g:plusone></div>
   <script type="text/javascript">
@@ -24,7 +31,7 @@
   echo "<div class='noticia'>";
   echo heading($noticia->n_title,3);
   echo "<span class='highlight'>Publicado el: ".$datetime."</span>".br();
-  echo '<div id=sociallinks  style="float:left; height: 30px; width: 100%;">'. $facebookcode.$twitercode.$googlepluscode.'</div>';
+  echo '<div id=sociallinks  style="float:left; height: 30px; width: 100%;">'.$twitercode.$googlepluscode.$facebookcode.'</div>';
   echo '<div class=clear></div>';
   if($noticia->n_link  != ""){
     if($noticia->n_linktxt == ""){$noticia->n_linktxt = $noticia->n_link;}
